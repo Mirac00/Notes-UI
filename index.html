@@ -8,25 +8,44 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
+<div class="container">
+    <div class="slidebar">
 
+        <div class="events__sidebar">
+            <p>Event</p>
+            <input type="text" id="title-E" placeholder="Add title">
+            <textarea id="description-E" placeholder="Add description"></textarea>
+            <input type="date" id="dateStart" placeholder="Add start date"> 
+            <input type="date" id="dateEnd" placeholder="Add end date"> 
+            <button id="btnAdd-E" class="btn-Add-E">Add Event</button>
+            <button id="btnSave-E" class="hidden">Save</button>
+            <button id="btnDelete-E" class="btn-Delete hidden">Delete</button>
+
+        </div>
         <div class="notes__sidebar">
-
+            <p>Notes</p>
             <input type="text" id="title" placeholder="Add title">
 
             <textarea id="description" placeholder="Add description"></textarea>
-
-            <button id="btnSave">Save</button>
+            
+            <button id="btnAdd" class="btn-Add-N">Add Note</button>
+            <button id="btnSave" class="hidden">Save</button>
             <button id="btnDelete" class="btn-Delete hidden">Delete</button>
 
         </div>
-
-        <div class="notes__container" id="notes__container">
-
-        </div>
-
     </div>
+    <div class="conteiner_view">
+        <p>Event</p>
+        <div class="events__container" id="events__container">
+        </div>
+        <p>Notes</p>
+        <div class="notes__container" id="notes__container">
+        </div>
+    </div> 
 
-    <script src="script.js"></script>
+</div>
+
+    <script src="noteJS.js"></script>
+    <script src="eventJS.js"></script>
 </body>
 </html>

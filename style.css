@@ -17,12 +17,54 @@ body {
     flex-direction: row;
     align-items: flex-start;
 }
-
-.notes__sidebar {
-    width: 400px;
-    height: 100vh;
+.slidebar {
+    width: 30%;
+    float: left;
+}
+.conteiner_view{
+    width:70%;
+    float: right;
+}
+.events__sidebar {
+    width: 100%;
+    height: 50vh;
     border-right: 2px solid #ccc;
     padding: 50px;
+    float: left;
+    order: -1; /* Zmieniono kolejność - pierwszy element */
+}
+
+.events__sidebar input {
+    width: 100%;
+    margin-bottom: 10px;
+    font-size: 13px;
+    padding: 10px;
+}
+
+.events__sidebar textarea {
+    width: 100%;
+    margin-bottom: 10px;
+    font-size: 13px;
+    padding: 10px;
+    max-width: 100%;
+}
+
+.events__sidebar button {
+    margin-bottom: 10px;
+    outline: none;
+    border: none;
+    background-color: #353535;
+    color: #FFF;
+    padding: 10px 20px;
+    border-radius: 3px;
+    cursor: pointer;
+}
+.notes__sidebar {
+    width: 100%;
+    height: 50vh;
+    border-right: 2px solid #ccc;
+    padding: 50px;
+    float: left;
 }
 
 .notes__sidebar input {
@@ -51,6 +93,17 @@ body {
     cursor: pointer;
 }
 
+.events__container {
+    width: 100%;
+    padding: 50px;
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-end; /* Zmieniono na prawą stronę */
+    order: 1; /* Zmieniono kolejność - drugi element */
+}
+
 .notes__container {
     width: 100%;
     padding: 50px;
@@ -58,10 +111,10 @@ body {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: flex-end; /* Zmieniono na prawą stronę */
 }
 
-.note{
+.note {
     background-color: #eee;
     padding: 30px;
     width: 25%;
@@ -76,15 +129,65 @@ body {
 
 .note p {
     max-height: 200px;
-    overflow: auto;  
+    overflow: auto;
     margin-bottom: 10px;
     font-size: 13px;
 }
 
+.event {
+    background-color: #ff0000;
+    padding: 30px;
+    width: 25%;
+    overflow: hidden;
+    margin-right: 30px;
+    margin-bottom: 30px;
+}
+.event h3 {
+    margin-bottom: 10px;
+}
+
+.event p {
+    max-height: 200px;
+    overflow: auto;
+    margin-bottom: 10px;
+    font-size: 13px;
+}
 .btn-Delete {
     background-color: #e74c3c !important;
 }
 
 .hidden {
     display: none;
+}
+
+.btn-Add-N {
+    background-color: green !important;
+}
+.btn-Add-E {
+    background-color: orangered !important;
+}
+
+/* Dodano regułę dla responsywności */
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+    
+    .events__sidebar,
+    .notes__sidebar,
+    .events__container,
+    .notes__container {
+        width: 100%;
+        height: auto;
+        order: 0;
+        float: none;
+        padding: 20px;
+        border-right: none;
+    }
+    
+    .note {
+        width: 100%;
+        margin-right: 0;
+    }
 }
